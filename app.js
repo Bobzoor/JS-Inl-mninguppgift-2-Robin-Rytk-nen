@@ -129,27 +129,26 @@ const underThirty = [];
 
 function taskSix() {
   for (let item in persons) {
-    if (persons.hasOwnProperty.call(persons, item)) {
-      const element = persons[item];
-      if (element.age >= 30 && element.married == true) {
-        overThirty.push(element.name);
-        married.push(element.name);
-      }
-      else if (element.age < 30 && element.married == true) {
-        underThirty.push(element.name)
-        married.push(element.name)
-      }
-      else {
-        underThirty.push(element.name);
-        notMarried.push(element.name);
-      }        
+    const element = persons[item];
+    if (element.age >= 30 && element.married == true) {
+      overThirty.push(element.name);
+      married.push(element.name);
     }
+    else if (element.age < 30 && element.married == true) {
+      underThirty.push(element.name)
+      married.push(element.name)
+    }
+    else {
+      underThirty.push(element.name);
+      notMarried.push(element.name);
+    }        
   }
   document.getElementById("answer-six").innerHTML = `<p><b>Över 30:</b> ${overThirty} 
   <br> <b>Under 30</b>: ${underThirty}
   <br> <b>Gift:</b> ${married} 
   <br> <b>Ogift:</b> ${notMarried}<p>`
 }
+
 
 
 /*
